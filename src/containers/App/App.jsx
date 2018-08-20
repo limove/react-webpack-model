@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import routes from '../../config/routes';
 
 class App extends Component {
     render() {
@@ -7,7 +6,7 @@ class App extends Component {
 
         return (
             <div>
-                {routes}
+                {this.props.children}
             </div>
         );
     }

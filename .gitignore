@@ -12,3 +12,4 @@ bundle.js
 .idea
 package-lock.json
 npm-debug.log
+dist

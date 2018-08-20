@@ -9,9 +9,9 @@
         "start-qa": "npm run webpack-qa",
         "start-prod": "npm run webpack-prod",
         "webpack-local": "webpack-dev-server --config webpack.local.config.js --devtool eval --progress --colors --hot --inline",
-        "webpack-dev": "webpack -p --display-error-details --config webpack.dev.config.js",
-        "webpack-qa": "webpack -p --display-error-details --config webpack.qa.config.js",
-        "webpack-prod": "webpack -p --display-error-details --config webpack.prod.config.js"
+        "webpack-dev": "webpack -p  --progress --display-error-details --config webpack.dev.config.js",
+        "webpack-qa": "webpack -p  --progress --display-error-details --config webpack.qa.config.js",
+        "webpack-prod": "webpack -p  --progress --display-error-details --config webpack.prod.config.js"
     },
     "author": "limove",
     "license": "ISC",

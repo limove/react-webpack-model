@@ -2,6 +2,9 @@
 import React, { Component } from 'react';
 import { Route, Switch, Link } from 'react-router-dom';
 import Loadable from 'react-loadable';
+import App from '../containers/App/App.jsx';
+
+// 组件加载
 const MyLoadingComponent = ({ isLoading, error }) => {
     // Handle the loading state
     if (isLoading) {
@@ -16,14 +19,22 @@ const MyLoadingComponent = ({ isLoading, error }) => {
     }
 };
 
+// 懒加载
 const AsyncIndex = Loadable({
     loader: () => import('../containers/IndexContainer/IndexContainer'),
     loading: MyLoadingComponent
 });
 
+// 路由配置
+const WrappedApp = (props) => (
+    <App {...props}>
+        <Switch>
+            <Route exact={true} path="/" component={AsyncIndex} />
+            <Route render={() => <div>404</div>} />
+        </Switch>
+    </App>
+);
+
 export default (
-    <Switch>
-        <Route exact={true} path="/" component={AsyncIndex} />
-        <Route render={() => <div>404</div>} />
-    </Switch>
+    <Route path="/" component={WrappedApp} />
 );
