@@ -13,8 +13,8 @@ module.exports = {
     output: {
         path: path.join(__dirname, '/dist'),
         publicPath: '/',
-        chunkFilename: '[name].[chunkhash:5].chunk.js',
-        filename: '[name].[hash].js'
+        chunkFilename: '[name].chunk.js',
+        filename: '[name].js'
     },
     resolve: {
         extensions: ['.js', '.jsx'],
