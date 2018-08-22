@@ -1,6 +1,6 @@
 // 按路由拆分代码
 import React, { Component } from 'react';
-import { Route, Switch, Link } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import Loadable from 'react-loadable';
 import App from '../containers/App/App.jsx';
 

@@ -8,7 +8,8 @@ const port = 7000;
 module.exports = {
     devtool: '#source-map',
     entry: {
-        bundle: path.resolve(__dirname, 'src/index.jsx')
+        bundle: path.resolve(__dirname, 'src/index.jsx'),
+        vendor: ['react', 'react-dom', 'react-router', 'react-router-dom']
     },
     output: {
         path: path.join(__dirname, '/dist'),
@@ -25,9 +26,9 @@ module.exports = {
                 'NODE_ENV': JSON.stringify('local')
             }
         }),
-        /* new webpack.optimize.CommonsChunkPlugin({
+        new webpack.optimize.CommonsChunkPlugin({
             name: ['vendor']
-        }), */
+        }),
         new OpenBrowserPlugin({
             url: `http://localhost:${port}`
         }),

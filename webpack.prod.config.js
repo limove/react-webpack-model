@@ -11,7 +11,8 @@ date = date.replace(/\s/g, '');
 
 module.exports = {
     entry: {
-        bundle: path.resolve(__dirname, 'src/index.jsx')
+        bundle: path.resolve(__dirname, 'src/index.jsx'),
+        vendor: ['react', 'react-dom', 'react-router', 'react-router-dom']
     },
     output: {
         path: path.join(__dirname, '/dist/chunk'+date),
@@ -28,9 +29,9 @@ module.exports = {
                 'NODE_ENV': JSON.stringify('prod')
             }
         }),
-        /* new webpack.optimize.CommonsChunkPlugin({
+        new webpack.optimize.CommonsChunkPlugin({
             name: ['vendor']
-        }), */
+        }),
         new uglifyJsPlugin({
             // 最紧凑的输出
             beautify: false,
