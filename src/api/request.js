@@ -40,6 +40,7 @@ let fetchData = (url, rType, params = {}, fetchOption) => {
     if (window.REQUESTTYPE == "mock") {
         return new Promise((resolve, reject) => {
             let data = getMockDate(url);
+            console.log('mock request >>>>>>', url, params, " result>>>>>", data);
             resolve(data);
         });
     } else {

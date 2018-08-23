@@ -9,7 +9,7 @@ module.exports = {
     devtool: '#source-map',
     entry: {
         bundle: path.resolve(__dirname, 'src/index.jsx'),
-        vendor: ['react', 'react-dom', 'react-router', 'react-router-dom']
+        vendor: ['react', 'react-dom', 'react-router', 'react-router-dom', 'moment']
     },
     output: {
         path: path.join(__dirname, '/dist'),

@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import moment from 'moment';
+moment.locale('zh-cn');
 
 class App extends Component {
     constructor(props) {
