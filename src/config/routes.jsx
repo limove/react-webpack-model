@@ -25,11 +25,17 @@ const AsyncIndex = Loadable({
     loading: MyLoadingComponent
 });
 
+const AsyncTemp = Loadable({
+    loader: () => import('../containers/Temp/Temp'),
+    loading: MyLoadingComponent
+});
+
 // 路由配置
 const WrappedApp = (props) => (
     <App {...props}>
         <Switch>
             <Route exact={true} path="/" component={AsyncIndex} />
+            <Route path="/Temp" component={AsyncTemp} />
             <Route render={() => <div>404</div>} />
         </Switch>
     </App>

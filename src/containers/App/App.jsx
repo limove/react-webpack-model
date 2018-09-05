@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import moment from 'moment';
+import './App.less';
 moment.locale('zh-cn');
 
 class App extends Component {
@@ -15,7 +16,11 @@ class App extends Component {
 
         return (
             <div>
-                {this.props.children}
+                <div className="header"></div>
+                <div className="app">
+                    <div className="menu"></div>
+                    <div className="content">{this.props.children}</div>
+                </div>
             </div>
         );
     }

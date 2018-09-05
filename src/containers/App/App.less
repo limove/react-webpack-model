@@ -1,0 +1,20 @@
+@HeaderHeight: 60px;
+@HeaderBgColor: #172a39;
+@MenuWidth: 200px;
+@MenuBgColor: #c7c7c7;
+
+.header {
+    background: @HeaderBgColor;
+    height: @HeaderHeight;
+}
+.app {
+    display: flex;
+    .menu {
+        width: @MenuWidth;
+        background: @MenuBgColor;
+        min-height: calc(~"100vh - @{HeaderHeight}");
+    }
+    .content {
+        flex: 1;
+    }
+}

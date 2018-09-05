@@ -1,12 +1,9 @@
-let mockdata = {};
-function refreshMock() {
-    mockdata = {
-        //示例:数据同步
-        "/park/syncSpaceData": Mock.mock({
-            "data": "同步成功",
-            "success": true
-        })
-    };
+let mockdata = {
+    //示例:数据同步
+    "/park/syncSpaceData": {
+        "data": "同步成功",
+        "success": true
+    }
 }
 
 /**
@@ -15,12 +12,13 @@ function refreshMock() {
  * @return {Object} 返回第一个匹配的数据
  */
 function getMockDate(url) {
-    refreshMock();
     let keys = Object.keys(mockdata);
     if (typeof url == 'string') url = new RegExp(`^${url}$`);
     let results = keys.filter(key => url.test(key))
         .map(key => mockdata[key]);
-    let result = results.length > 0 ? results[0] : { message: 'no mock data' };
+    let result = results.length > 0
+        ? Mock.mock(results[0]) 
+        : { message: 'no mock data' };
     return result;
 }
 
